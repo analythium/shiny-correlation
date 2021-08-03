@@ -1,0 +1,6 @@
+FROM analythium/shinyproxy-demo:latest
+USER root
+RUN install2.r -r http://cran.rstudio.com/ rgl
+RUN rm -rf /home/app/*
+COPY ./app-v2.R ./app.R
+USER app

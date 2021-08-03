@@ -1,0 +1,3 @@
+FROM analythium/shinyproxy-demo:latest
+RUN rm -rf /home/app/*
+COPY ./app-v1.R ./app.R
