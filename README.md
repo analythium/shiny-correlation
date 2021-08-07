@@ -64,3 +64,19 @@ docker push analythium/correlation:v2
 # pull all images at once
 docker images |grep -v REPOSITORY|awk '{print $1":"$2}'|xargs -L1 docker pull
 ```
+
+## Git based update
+
+```bash
+git clone https://github.com/analythium/shiny-correlation.git
+
+cd shiny-correlation
+git pull
+
+cp application.yml /etc/shinyproxy
+
+docker pull analythium/correlation:v1
+docker pull analythium/correlation:v2
+
+service shinyproxy restart
+```
