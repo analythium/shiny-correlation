@@ -1,5 +1,6 @@
 library(shiny)
 library(MASS)
+options(rgl.useNULL = TRUE)
 library(rgl)
 
 ui <- fluidPage(
