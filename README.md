@@ -80,3 +80,18 @@ docker pull analythium/correlation:v2
 
 service shinyproxy restart
 ```
+
+## Multiple Shiny apps with Shiny Server
+
+A Dockerfile that uses the `rocker/shiny` parent image to deploy both versions in the same container:
+
+```bash
+docker build -f Dockerfile-shiny-server -t analythium/correlation:v3 .
+
+docker run -p 4000:3838 analythium/correlation:v3
+
+docker push analythium/correlation:v3
+```
+
+The 2D version (`v1`) will be available at `http://localhost:4000/app2d/`.
+The 3D version (`v2`) will be available at `http://localhost:4000/app3d/`.
