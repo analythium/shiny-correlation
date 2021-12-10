@@ -2,10 +2,8 @@ FROM rocker/shiny:4.0.5
 
 RUN install2.r -r http://cran.rstudio.com/ rgl
 
-RUN mkdir /srv/shiny-server/app2d
 COPY ./app-v1.R /srv/shiny-server/app2d/app.R
 
-RUN mkdir /srv/shiny-server/app3d
 COPY ./app-v2.R /srv/shiny-server/app3d/app.R
 
 USER shiny
