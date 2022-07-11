@@ -2,6 +2,7 @@ library(shiny)
 library(MASS)
 options(rgl.useNULL = TRUE)
 library(rgl)
+# note: need rgl version 0.108.3.2
 
 ui <- fluidPage(
   titlePanel("Correlated variables"),
